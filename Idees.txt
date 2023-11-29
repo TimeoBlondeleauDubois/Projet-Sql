@@ -1,0 +1,5 @@
+Cahier des charges : 
+    -Plateforme Web lié avec une base de donnée SQL
+        -Possibilité de créer utilisateur
+        -Possibilité de rechercher utilisateur
+        -Possibilité d'afficher info crée par utilisateur
