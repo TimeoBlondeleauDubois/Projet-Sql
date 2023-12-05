@@ -7,7 +7,8 @@
   </head>
   <body>
   
-<form>
+  <form method="POST" action="verification.php" enctype="multipart/form-data">
+
       <label for="nomServeur">Nom du serveur :</label>
       <input type="text" id="nomServeur" name="nomServeur" required /><br />
 
@@ -18,7 +19,7 @@
       <input type="text" id="descServeur" name="descServeur" required /><br />
 
       <label for="imgServeur">Veuillez insérer l'image que vous voulez mettre :</label>
-      <input type="file" id="imgServeur" name="imgServeur" required /><br />
+      <input type="file" id="imgServeur" name="imgServeur" /><br />
 
 <br>
 
@@ -69,6 +70,7 @@
           <label for="Version_Minecraft_du_serveur">Version Minecraft du serveur</label>
 </div>
 </fieldset>
+
 <button type="submit">Valider la création de votre serveur</button>
     </form>
   </body>
