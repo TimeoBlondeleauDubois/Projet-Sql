@@ -20,23 +20,47 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die("Erreur de connexion à la base de données: " . $e->getMessage());
         }
 
-        // Préparez la requête SQL d'insertion
-        $requete = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur, det_Description_Du_Serveur) VALUES(:nomServeur, :ipServeur, :descServeur)');
-        
+        // Préparez la requête SQL d'insertion pour les détails du serveur
+        $requeteServeur = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur, det_Description_Du_Serveur) VALUES(:nomServeur, :ipServeur, :descServeur)');
+
         // Exécutez la requête avec les valeurs fournies via le formulaire POST
         try {
-            $requete->execute([
+            $requeteServeur->execute([
                 'nomServeur' => $_POST['nomServeur'],
                 'ipServeur' => $_POST['ipServeur'],
-                'descServeur' => $_POST['descServeur'],]);
+                'descServeur' => $_POST['descServeur'],
+            ]);
 
             // Récupérez l'ID de la dernière insertion (peut être utile)
             $lastInsertId = $db->lastInsertId();
 
-            echo "Enregistrement réussi. ID du serveur : $lastInsertId";
+            echo "Enregistrement des détails du serveur réussi. ID du serveur : $lastInsertId";
         } catch (PDOException $e) {
             // En cas d'échec de l'insertion, affichez une erreur
-            die("Erreur d'insertion dans la base de données: " . $e->getMessage());
+            die("Erreur d'insertion des détails du serveur dans la base de données: " . $e->getMessage());
+        }
+
+        // Récupérez les tags du formulaire
+        $tags = [];
+
+        // Vérifiez si au moins un tag a été coché
+        if (!empty($_POST['tags'])) {
+            // Ajoutez tous les tags cochés
+            $tags = $_POST['tags'];
+
+            // Préparez la requête SQL d'insertion pour les tags
+            $requeteTag = $db->prepare('INSERT INTO tag (Tag_Nom_du_tag, ID_Tag) VALUES(:tag, :serveurId)');
+
+            // Exécutez la requête pour chaque tag
+            foreach ($tags as $tag) {
+                try {
+                    $requeteTag->execute(['tag' => $tag, 'serveurId' => $lastInsertId]);
+                    echo "Enregistrement du tag réussi : $tag";
+                } catch (PDOException $e) {
+                    // En cas d'échec de l'insertion du tag, affichez une erreur
+                    die("Erreur d'insertion du tag dans la base de données: " . $e->getMessage());
+                }
+            }
         }
 
     } else {
