@@ -22,7 +22,7 @@ Cahier des charges :
                 -Semi-Rp
                 -Mini-jeux
                 -Plot-Build
-                -SMP (Survival MultiPlayer) Ex : Holycube)
+                -SMP (Survival MultiPlayer) Ex : Holycube
             //////////////////////
         -Utilisateur peut Rechercher serveur :
             -Les filtres = tag : 
