@@ -14,7 +14,7 @@ Cahier des charges :
             //////////////////////
             -Différents "tag" choissisable par l'utilisateur :
                 -Version Minecraft du serveur (dernière version en date auto)
-                -Moddée
+                -Moddee
                 -Vanilla (auto)
                 -Crack
                 -Prenium (auto)
@@ -22,7 +22,7 @@ Cahier des charges :
                 -Semi-Rp
                 -Mini-jeux
                 -Plot-Build
-                -SMP (Survival MultiPlayer Ex : Holycube)
+                -SMP (Survival MultiPlayer) Ex : Holycube)
             //////////////////////
         -Utilisateur peut Rechercher serveur :
             -Les filtres = tag : 
