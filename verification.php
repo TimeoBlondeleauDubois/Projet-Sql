@@ -48,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // Ajoutez tous les tags cochés
             $tags = $_POST['tags'];
 
-            // Préparez la requête SQL d'insertion pour les tags
-            $requeteTag = $db->prepare('INSERT INTO tag (Tag_Nom_du_tag, ID_Tag) VALUES(:tag, :serveurId)');
+                        // Préparez la requête SQL d'insertion pour les tags
+            $requeteTag = $db->prepare('INSERT INTO tag (Tag_Nom_du_tag, ID_Tag, serveur_id) VALUES(:tag, NULL, :serveurId)');
 
             // Exécutez la requête pour chaque tag
             foreach ($tags as $tag) {
