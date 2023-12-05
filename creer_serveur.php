@@ -1,33 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Projet 2</title>
-
-    <style>
-      .button {
-        background-color: #1c87c9;
-        border: none;
-        color: white;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-    </style>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Création du serveur Minecraft</title>
   </head>
   <body>
-    
-  <div align="center"><a href="creer_serveur.php" class="button">Créer votre serveur minecraft</a></div>
+    <form>
+      <label for="nomServeur">Nom du serveur :</label>
+      <input type="text" id="nomServeur" name="nomServeur" required /><br />
 
-  <fieldset>
-  <legend>Choisissez vos tags:</legend>
+      <label for="ipServeur">Adresse IP du serveur :</label>
+      <input type="text" id="ipServeur" name="ipServeur" required /><br />
+
+      <label for="descServeur">Description du serveur</label>
+      <input type="text" id="descServeur" name="descServeur" required /><br />
+
+      <label for="imgServeur">Veuillez insérer l'image que vous voulez mettre</label>
+      <input type="file" id="imgServeur" name="imgServeur" required /><br />
+
+<br>
+
+      <fieldset>
+        <legend>Choisissez vos tags : (par défaut vanilla et prenium) </legend>
   <div>
     <input type="checkbox" id="Version_Minecraft_du_serveur" name="Version_Minecraft_du_serveur"/>
     <label for="Version_Minecraft_du_serveur">Version Minecraft du serveur</label>
@@ -68,30 +63,12 @@
     <input type="checkbox" id="SMP" name="SMP" />
     <label for="SMP">SMP (Survival MultiPlayer)</label>
   </div>
+  <div>
+          <input type="checkbox" id="Version_Minecraft_du_serveur" name="Version_Minecraft_du_serveur"/>
+          <label for="Version_Minecraft_du_serveur">Version Minecraft du serveur</label>
+</div>
 </fieldset>
-
-<br>
-
-    <!-- input tag -->
-    <input id="rechercher" onkeyup="search_server()" type="text"
-        name="rechercher" placeholder="rechercher un serveur">
-
-    <!-- ordered list -->
-    <ol id='list'>
-        <li class="minecraft">serveur 1</li>
-        <li class="minecraft">serveur 2</li>
-        <li class="minecraft">serveur 3</li>
-        <li class="minecraft">serveur 4</li>
-        <li class="minecraft">serveur 5</li>
-        <li class="minecraft">serveur 6</li>
-        <li class="minecraft">serveur 7</li>
-        <li class="minecraft">serveur 8</li>
-        <li class="minecraft">serveur 9</li>
-        <li class="minecraft">serveur 10</li>
-        <li class="minecraft">serveur 11</li>
-    </ol>
-      
-    <!-- linking javascript -->
-    <script src="./BarreDeRecherche.js"></script>
+<button type="submit">Valider la création de votre serveur</button>
+    </form>
   </body>
 </html>
