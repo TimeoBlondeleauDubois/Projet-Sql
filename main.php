@@ -61,24 +61,28 @@
   </div>
 </fieldset>
 
+<br>
+
     <!-- input tag -->
     <input id="rechercher" onkeyup="search_server()" type="text"
         name="rechercher" placeholder="rechercher un serveur">
       
     <!-- ordered list -->
     <ol id='list'>
-        <li class="minecraft">serveur 1</li>
-        <li class="minecraft">serveur 2</li>
-        <li class="minecraft">serveur 3</li>
-        <li class="minecraft">serveur 4</li>
-        <li class="minecraft">serveur 5</li>
-        <li class="minecraft">serveur 6</li>
-        <li class="minecraft">serveur 7</li>
-        <li class="minecraft">serveur 8</li>
-        <li class="minecraft">serveur 9</li>
-        <li class="minecraft">serveur 10</li>
-        <li class="minecraft">serveur 11</li>
-    </ol>
+    <li class="minecraft">serveur 1</li>
+    <li class="minecraft">serveur 2</li>
+    <li class="minecraft">serveur 3</li>
+    <!-- ... Ajoutez la classe "hidden" à partir d'ici -->
+    <li class="minecraft hidden">serveur 4</li>
+    <li class="minecraft hidden">serveur 5</li>
+    <li class="minecraft hidden">serveur 6</li>
+    <li class="minecraft hidden">serveur 7</li>
+    <li class="minecraft hidden">serveur 8</li>
+    <li class="minecraft hidden">serveur 9</li>
+    <li class="minecraft hidden">serveur 10</li>
+    <li class="minecraft hidden">serveur 11</li>
+</ol>
+
       
     <!-- linking javascript -->
     <script src="./BarreDeRecherche.js"></script>
