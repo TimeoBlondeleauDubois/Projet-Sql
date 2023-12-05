@@ -21,13 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         // Préparez la requête SQL d'insertion
-        $requete = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur) VALUES(:nomServeur, :ipServeur)');
+        $requete = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur, det_Description_Du_Serveur) VALUES(:nomServeur, :ipServeur, :descServeur)');
 
         // Exécutez la requête avec les valeurs fournies via le formulaire POST
         try {
             $requete->execute([
                 'nomServeur' => $_POST['nomServeur'],
                 'ipServeur' => $_POST['ipServeur'],
+                'descServeur' => $_POST['descServeur'],
             ]);
 
             // Récupérez l'ID de la dernière insertion (peut être utile)
