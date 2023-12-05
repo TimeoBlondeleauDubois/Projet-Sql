@@ -77,7 +77,7 @@
         <li class="minecraft">serveur 8</li>
         <li class="minecraft">serveur 9</li>
         <li class="minecraft">serveur 10</li>
-        <li class="minecraft">serveur 11/li>
+        <li class="minecraft">serveur 11</li>
     </ol>
       
     <!-- linking javascript -->
