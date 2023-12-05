@@ -27,7 +27,7 @@
   <div align="center"><a href="creer_serveur.php" class="button">Créer votre serveur minecraft</a></div>
 
   <fieldset>
-  <legend>Choisissez vos tags:</legend>
+  <legend>Rechercher le serveur en fonction des tags:</legend>
   <div>
     <input type="checkbox" id="Version_Minecraft_du_serveur" name="Version_Minecraft_du_serveur"/>
     <label for="Version_Minecraft_du_serveur">Version Minecraft du serveur</label>
