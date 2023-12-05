@@ -1,3 +1,4 @@
+
 <?php
 $db = new PDO(
     'mysql:host=localhost;dbname=timeo;charset=utf8',
@@ -10,7 +11,7 @@ $requete->execute();
 $details = $requete->fetchAll();
 ?>
 
-<h1>Liste des serveurs </h1>
+<h1>Liste des serveurs</h1>
 
 <?php foreach ($details as $detail): ?>
     <ul>
@@ -22,9 +23,12 @@ $details = $requete->fetchAll();
             <!-- Afficher les tags -->
             <strong>Tags :</strong>
             <?php
-            // Vérifiez si des tags existent
-            if (!empty($detail['det_Tags'])) {
-                $tags = explode(', ', $detail['det_Tags']);
+            $requeteTags = $db->prepare('SELECT Tag_Nom_du_tag FROM tag WHERE serveur_id = :serveurId');
+            $requeteTags->bindParam(':serveurId', $detail['ID_Detail']);
+            $requeteTags->execute();
+            $tags = $requeteTags->fetchAll(PDO::FETCH_COLUMN);
+
+            if (!empty($tags)) {
                 foreach ($tags as $tag) {
                     echo "<span class='tag'>$tag</span> ";
                 }
