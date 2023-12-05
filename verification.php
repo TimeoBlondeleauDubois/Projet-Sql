@@ -28,8 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $requete->execute([
                 'nomServeur' => $_POST['nomServeur'],
                 'ipServeur' => $_POST['ipServeur'],
-                'descServeur' => $_POST['descServeur'],
-                            ]);
+                'descServeur' => $_POST['descServeur'],]);
 
             // Récupérez l'ID de la dernière insertion (peut être utile)
             $lastInsertId = $db->lastInsertId();
