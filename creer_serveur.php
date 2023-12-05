@@ -6,17 +6,18 @@
     <title>Création du serveur Minecraft</title>
   </head>
   <body>
-    <form>
+  
+<form>
       <label for="nomServeur">Nom du serveur :</label>
       <input type="text" id="nomServeur" name="nomServeur" required /><br />
 
       <label for="ipServeur">Adresse IP du serveur :</label>
       <input type="text" id="ipServeur" name="ipServeur" required /><br />
 
-      <label for="descServeur">Description du serveur</label>
+      <label for="descServeur">Description du serveur :</label>
       <input type="text" id="descServeur" name="descServeur" required /><br />
 
-      <label for="imgServeur">Veuillez insérer l'image que vous voulez mettre</label>
+      <label for="imgServeur">Veuillez insérer l'image que vous voulez mettre :</label>
       <input type="file" id="imgServeur" name="imgServeur" required /><br />
 
 <br>
@@ -24,7 +25,7 @@
       <fieldset>
         <legend>Choisissez vos tags : (par défaut vanilla et prenium) </legend>
   <div>
-    <input type="checkbox" id="Version_Minecraft_du_serveur" name="Version_Minecraft_du_serveur"/>
+  <input type="checkbox" id="Version_Minecraft_du_serveur" name="tags[]" />
     <label for="Version_Minecraft_du_serveur">Version Minecraft du serveur</label>
   </div>
   <div>
