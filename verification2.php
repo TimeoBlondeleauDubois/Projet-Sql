@@ -21,12 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         AND d.det_Adresse_Ip_Du_Serveur LIKE :ipServeur
         AND t.Tag_Nom_du_tag IN ('" . implode("','", $tags) . "') 
         GROUP BY d.ID_Detail
+        HAVING COUNT(DISTINCT t.Tag_Nom_du_tag) = :tagCount
     ");
 
     $nomServeurParam = '%' . $nomServeur . '%';
     $ipServeurParam = '%' . $ipServeur . '%';
     $requeteServeur->bindParam(':nomServeur', $nomServeurParam);
     $requeteServeur->bindParam(':ipServeur', $ipServeurParam);
+    $requeteServeur->bindValue(':tagCount', count($tags), PDO::PARAM_INT); // Nombre de tags spécifiés
     $requeteServeur->execute();
 
     // Récupération des résultats
@@ -49,6 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<span class='tag'>" . $detail['tags'] . "</span> ";
 
         echo "</div><br>";
-      }
+    }
 }
 ?>
