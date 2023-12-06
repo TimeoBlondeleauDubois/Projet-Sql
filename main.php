@@ -36,7 +36,7 @@
     <br>
 
     <fieldset>
-    <legend>Choisissez vos tags : (OBLIGATOIRE) </legend>
+    <legend>Choisissez vos tags : (Choisissez au moins un tag ou une version) </legend>
     <div>
         <input type="checkbox" id="Moddee" name="tags[]" value="Moddee" />
         <label for="Moddee">Moddee</label>
