@@ -23,10 +23,19 @@
     <link rel="stylesheet" type="text/css" href="style3.css">
   </head>
   <body>
-    
   <div align="center"><a href="creer_serveur.php" class="button">Créer votre serveur minecraft</a></div>
 
-  <fieldset>
+<form method="POST" action="verification2.php" enctype="multipart/form-data">
+
+    <label for="nomServeur">Nom du serveur :</label>
+    <input type="text" id="nomServeur" name="nomServeur"><br/>
+
+    <label for="ipServeur">Adresse IP du serveur :</label>
+    <input type="text" id="ipServeur" name="ipServeur"><br/>
+
+    <br>
+
+    <fieldset>
     <legend>Choisissez vos tags : (par défaut vanilla et prenium) </legend>
     <div>
         <input type="checkbox" id="Version_Minecraft_du_serveur" name="tags[]" value="Version_Minecraft_du_serveur" />
@@ -68,7 +77,6 @@
         <input type="checkbox" id="SMP" name="tags[]" value="SMP" />
         <label for="SMP">SMP (Survival MultiPlayer)</label>
     </div>
-
     <div>
             <nav>
                 <ul>
@@ -85,32 +93,8 @@
                 </ul>
             </nav>
         </div>
-
     </fieldset>
-
-<br>
-
-    <!-- input tag -->
-    <input id="rechercher" onkeyup="search_server()" type="text"
-        name="rechercher" placeholder="rechercher un serveur">
-
-    <!-- ordered list -->
-    <ol id='list'>
-        <li class="minecraft">serveur 1</li>
-        <li class="minecraft">serveur 2</li>
-        <li class="minecraft">serveur 3</li>
-        <li class="minecraft">serveur 4</li>
-        <li class="minecraft">serveur 5</li>
-        <li class="minecraft">serveur 6</li>
-        <li class="minecraft">serveur 7</li>
-        <li class="minecraft">serveur 8</li>
-        <li class="minecraft">serveur 9</li>
-        <li class="minecraft">serveur 10</li>
-        <li class="minecraft">serveur 11</li>
-    </ol>
-      
-
-    <!-- linking javascript -->
-    <script src="./BarreDeRecherche.js"></script>
-  </body>
+    <button type="submit">Rechercher un serveur</button>
+</form>
+</body>
 </html>
