@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>Création du serveur Minecraft</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
 </head>
 <body>
 
@@ -19,11 +20,11 @@
     <input type="text" id="descServeur" name="descServeur" required/><br/>
 
     <label for="imgServeur">Veuillez insérer l'image que vous voulez mettre :</label>
-    <input type="file" id="imgServeur" name="imgServeur"/><br/>
+    <input type="file" id="imgServeur" name="imgServeur" accept="image/*" required/><br/>
 
     <br>
 
-<fieldset>
+    <fieldset>
     <legend>Choisissez vos tags : (par défaut vanilla et prenium) </legend>
     <div>
         <input type="checkbox" id="Version_Minecraft_du_serveur" name="tags[]" value="Version_Minecraft_du_serveur" />
@@ -65,13 +66,25 @@
         <input type="checkbox" id="SMP" name="tags[]" value="SMP" />
         <label for="SMP">SMP (Survival MultiPlayer)</label>
     </div>
-  <div>
-      <input type="checkbox" id="Version_Minecraft_du_serveur" name="tags[]" value="Version_Minecraft_du_serveur" />
-      <label for="Version_Minecraft_du_serveur">Version Minecraft du serveur</label>
-  </div>
-</fieldset>
+    <div>
+            <nav>
+                <ul>
+                    <li class="deroulant"><a href="#">Version ⇩ &ensp;</a>
+                        <ul class="sous">
+                            <li><input type="checkbox" id="Version.1.15" name="tags[]" value="Version.1.15" /><label for="Version">1.15.X</label> </li>
+                            <li><input type="checkbox" id="Version.1.16" name="tags[]" value="Version.1.16" /><label for="Version">1.16.X</label></li>
+                            <li><input type="checkbox" id="Version.1.17" name="tags[]" value="Version.1.17" /><label for="Version">1.17.X</label></li>
+                            <li><input type="checkbox" id="Version.1.18" name="tags[]" value="Version.1.18" /><label for="Version">1.18.X</label></li>
+                            <li><input type="checkbox" id="Version.1.19" name="tags[]" value="Version.1.19" /><label for="Version">1.19.X</label></li>
+                            <li><input type="checkbox" id="Version.1.20" name="tags[]" value="Version.1.20" /><label for="Version">1.20.X</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </fieldset>
 
-    <button type="submit">Valider la création de votre serveur</button>
+<button type="submit">Valider la création de votre serveur</button>
 </form>
 </body>
 </html>

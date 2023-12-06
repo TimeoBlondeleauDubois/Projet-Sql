@@ -2,7 +2,7 @@
 function search_server() {
     let input = document.getElementById('rechercher').value
     input=input.toLowerCase();
-    let x = document.getElementsByClassName('minecraft');
+    let x = document.getElementsByClassName('det_Nom_Du_Serveur');
 
     for (i = 0; i < x.length; i++) { 
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
