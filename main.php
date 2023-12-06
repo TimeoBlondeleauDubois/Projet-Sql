@@ -38,10 +38,6 @@
     <fieldset>
     <legend>Choisissez vos tags : (OBLIGATOIRE) </legend>
     <div>
-        <input type="checkbox" id="Version_Minecraft_du_serveur" name="tags[]" value="Version_Minecraft_du_serveur" />
-        <label for="Version_Minecraft_du_serveur">Version Minecraft du serveur</label>
-    </div>
-    <div>
         <input type="checkbox" id="Moddee" name="tags[]" value="Moddee" />
         <label for="Moddee">Moddee</label>
     </div>

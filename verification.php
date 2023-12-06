@@ -39,15 +39,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die("Erreur de connexion à la base de données: " . $e->getMessage());
         }
 
-        $requeteServeur = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur, det_Description_Du_Serveur, det_Image_Du_Serveur, version) VALUES(:nomServeur, :ipServeur, :descServeur, :imagePath, :version)');
+        $requeteServeur = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur, det_Description_Du_Serveur, det_Image_Du_Serveur, det_version) VALUES(:nomServeur, :ipServeur, :descServeur, :imagePath, :version)');
 
-        $requeteServeur->execute([
-            'nomServeur' => $_POST['nomServeur'],
-            'ipServeur' => $_POST['ipServeur'],
-            'descServeur' => $_POST['descServeur'],
-            'imagePath' => $imageDestination,
-            'version' => $_POST['version'],
-        ]);
+// ...
+
+$version = isset($_POST['Version_Minecraft_du_serveur']) ? $_POST['Version_Minecraft_du_serveur'] : null;
+
+$requeteServeur = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur, det_Description_Du_Serveur, det_Image_Du_Serveur, det_version) VALUES(:nomServeur, :ipServeur, :descServeur, :imagePath, :version)');
+
+$requeteServeur->execute([
+    'nomServeur' => $_POST['nomServeur'],
+    'ipServeur' => $_POST['ipServeur'],
+    'descServeur' => $_POST['descServeur'],
+    'imagePath' => $imageDestination,
+    'version' => $version,
+]);
+
+// ...
+
 
         echo "Enregistrement des détails du serveur réussi.";
         
