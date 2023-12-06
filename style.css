@@ -1,37 +1,44 @@
-p,
-label {
-  font:
-    1rem 'Fira Sans',
-    sans-serif;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-input {
-  margin: 0.4rem;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#rechercher{
-    margin-left: 15%;
-    padding:15px;
-    border-radius: 10px;
-  }
+.container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
 
-  input[type=text] {
-     width: 30%;
-     -webkit-transition: width 0.15s ease-in-out;
-     transition: width 0.15s ease-in-out;
-  }
+.container strong {
+    color: #333;
+}
 
-  /* When the input field gets focus,
-       change its width to 100% */
-  input[type=text]:focus {
-    width: 70%;
-  }
+.tag {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
 
- #list{
-   font-size:  1.5em;
-   margin-left: 90px;
-  }
+.no-tag {
+    color: #777;
+    font-style: italic;
+}
 
-.animals{
-  display: list-item;    
- } 
+.center {
+    text-align: center;
+}
