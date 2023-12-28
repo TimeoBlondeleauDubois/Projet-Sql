@@ -1,11 +1,10 @@
 <?php
-// PHP1: verification.php
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (isset($_POST['nomServeur']) && isset($_POST['ipServeur']) && isset($_POST['descServeur'])) {
         
-        $imagePath = 'uploads/';  // Dossier où vous souhaitez stocker les images
+        $imagePath = 'uploads/';
 
         // Vérifiez si un fichier a été téléchargé
         if (isset($_FILES['imgServeur']) && $_FILES['imgServeur']['error'] === UPLOAD_ERR_OK) {
@@ -41,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $requeteServeur = $db->prepare('INSERT INTO detail (det_Nom_Du_Serveur, det_Adresse_Ip_Du_Serveur, det_Description_Du_Serveur, det_Image_Du_Serveur, det_version) VALUES(:nomServeur, :ipServeur, :descServeur, :imagePath, :version)');
 
-// ...
 
 $version = isset($_POST['Version_Minecraft_du_serveur']) ? $_POST['Version_Minecraft_du_serveur'] : null;
 
@@ -55,7 +53,6 @@ $requeteServeur->execute([
     'version' => $version,
 ]);
 
-// ...
 
 
         echo "Enregistrement des détails du serveur réussi.";
@@ -66,7 +63,7 @@ $requeteServeur->execute([
         // Récupérez les tags du formulaire
         $tags = !empty($_POST['tags']) ? $_POST['tags'] : [];
 
-        // Si des tags sont sélectionnés, insérez-les dans la table tag
+        // Si des tags sont sélectionnés, insertion dans la table tag
         if (!empty($tags)) {
             $requeteTag = $db->prepare('INSERT INTO tag (Tag_Nom_du_tag, serveur_id) VALUES(:tag, :serveurId)');
             foreach ($tags as $tag) {

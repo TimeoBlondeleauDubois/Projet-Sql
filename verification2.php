@@ -7,7 +7,7 @@ $db = new PDO(
 
 // Vérifie si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupère le nom, l'adresse IP du serveur et les tags à partir du formulaire
+    // Récupère les informations à partir du formulaire
     $nomServeur = $_POST['nomServeur'];
     $ipServeur = $_POST['ipServeur'];
     $tags = isset($_POST['tags']) ? $_POST['tags'] : array();
